@@ -20,7 +20,7 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func searchButtonAction(_ sender: UIButton) {
-        print("Test Blah Blah Blah")
+        print("Test Blah")
     }
     
 }

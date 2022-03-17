@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0910FD7F27E3DB6A00585DCC /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910FD7E27E3DB6A00585DCC /* CustomErrors.swift */; };
 		93305A732513D043004E869A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93305A722513D043004E869A /* AppDelegate.swift */; };
 		93305A752513D043004E869A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93305A742513D043004E869A /* SceneDelegate.swift */; };
 		93305A7A2513D043004E869A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93305A782513D043004E869A /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0910FD7E27E3DB6A00585DCC /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
 		93305A6F2513D043004E869A /* MovieBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93305A722513D043004E869A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93305A742513D043004E869A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0910FD7D27E3DB3200585DCC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0910FD7E27E3DB6A00585DCC /* CustomErrors.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		93305A662513D043004E869A = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 		93FE106D25E0557B00F805CE /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0910FD7D27E3DB3200585DCC /* Utilities */,
 				93FE106C25E0556500F805CE /* App */,
 				93FE107125E056C300F805CE /* Search */,
 				93C5866125E9EFFF00DBCE60 /* Detail */,
@@ -263,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93FE107325E056D100F805CE /* SearchViewController.swift in Sources */,
+				0910FD7F27E3DB6A00585DCC /* CustomErrors.swift in Sources */,
 				93305A732513D043004E869A /* AppDelegate.swift in Sources */,
 				93BB63A42513DEEF00837DF4 /* Network.swift in Sources */,
 				93305A752513D043004E869A /* SceneDelegate.swift in Sources */,

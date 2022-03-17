@@ -8,4 +8,12 @@
 
 import UIKit
 
-class MovieDetailViewController: UIViewController { }
+class MovieDetailViewController: UIViewController {
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.systemBlue
+    }
+}

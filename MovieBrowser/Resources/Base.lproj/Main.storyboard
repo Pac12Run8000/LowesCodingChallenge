@@ -16,17 +16,59 @@
                     <view key="view" contentMode="scaleToFill" id="ua7-fQ-ZoM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6v-gf-Vfy">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="5n3-HN-qh8">
+                                        <rect key="frame" x="0.0" y="0.0" width="339" height="44"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDv-ZF-K12">
+                                        <rect key="frame" x="339" y="0.0" width="75" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="Sw3-Mc-Xm5"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Go">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="searchButtonAction:" destination="27X-rr-gtt" eventType="touchUpInside" id="WXV-iL-m3U"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sDv-ZF-K12" secondAttribute="bottom" id="2Cj-kj-GQd"/>
+                                    <constraint firstItem="sDv-ZF-K12" firstAttribute="leading" secondItem="5n3-HN-qh8" secondAttribute="trailing" id="2qI-ga-xbS"/>
+                                    <constraint firstItem="5n3-HN-qh8" firstAttribute="top" secondItem="g6v-gf-Vfy" secondAttribute="top" id="3wg-s9-DKv"/>
+                                    <constraint firstAttribute="height" constant="44" id="KUQ-NI-NYz"/>
+                                    <constraint firstItem="sDv-ZF-K12" firstAttribute="top" secondItem="g6v-gf-Vfy" secondAttribute="top" id="WEb-Yf-vwc"/>
+                                    <constraint firstItem="5n3-HN-qh8" firstAttribute="leading" secondItem="g6v-gf-Vfy" secondAttribute="leading" id="hcd-kH-Yo5"/>
+                                    <constraint firstAttribute="trailing" secondItem="sDv-ZF-K12" secondAttribute="trailing" id="ki2-Q8-Ygr"/>
+                                    <constraint firstAttribute="bottom" secondItem="5n3-HN-qh8" secondAttribute="bottom" id="yj3-QS-qz1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Sbn-7z-GfM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g6v-gf-Vfy" firstAttribute="top" secondItem="Sbn-7z-GfM" secondAttribute="top" id="CBN-16-Q6I"/>
+                            <constraint firstItem="g6v-gf-Vfy" firstAttribute="leading" secondItem="Sbn-7z-GfM" secondAttribute="leading" id="orb-fe-GiE"/>
+                            <constraint firstItem="g6v-gf-Vfy" firstAttribute="trailing" secondItem="Sbn-7z-GfM" secondAttribute="trailing" id="qS3-Lf-20K"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jPR-2v-bhQ"/>
                     <connections>
+                        <outlet property="searchBar" destination="5n3-HN-qh8" id="U77-ld-gR9"/>
+                        <outlet property="searchButton" destination="sDv-ZF-K12" id="jgy-Wh-GUT"/>
                         <segue destination="WYc-bi-K92" kind="show" identifier="detailSegue" id="1yh-Dr-Doa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYC-Q4-UFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+            <point key="canvasLocation" x="922" y="138"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="cjm-4n-xR2">

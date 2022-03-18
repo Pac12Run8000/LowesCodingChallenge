@@ -10,9 +10,17 @@ import UIKit
 
 class MovieDetailViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
     var movie:Movie? {
         didSet {
-            print("Movie details: \(movie)")
+            DispatchQueue.main.async { [weak self] in
+                guard let strongself = self else {return}
+                strongself.titleLabel.text = strongself.movie?.title
+            }
+            
+            
         }
     }
     

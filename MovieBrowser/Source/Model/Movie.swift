@@ -16,4 +16,5 @@ struct Movie:Codable {
     var title:String
     var release_date:String
     var vote_average:Double
+    var overview:String
 }

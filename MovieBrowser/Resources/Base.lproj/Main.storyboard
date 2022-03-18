@@ -141,8 +141,20 @@
                     <view key="view" contentMode="scaleToFill" id="UYm-16-pNv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joI-2n-Zfv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hsL-lj-fpS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hsL-lj-fpS" firstAttribute="trailing" secondItem="joI-2n-Zfv" secondAttribute="trailing" id="2nf-gs-6It"/>
+                            <constraint firstItem="joI-2n-Zfv" firstAttribute="top" secondItem="hsL-lj-fpS" secondAttribute="top" id="KWt-v2-FfC"/>
+                            <constraint firstItem="hsL-lj-fpS" firstAttribute="bottom" secondItem="joI-2n-Zfv" secondAttribute="bottom" id="cCF-Ct-Lzn"/>
+                            <constraint firstItem="joI-2n-Zfv" firstAttribute="leading" secondItem="hsL-lj-fpS" secondAttribute="leading" id="fOh-OK-UWx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f4O-3b-m31"/>
                 </viewController>

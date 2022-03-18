@@ -37,12 +37,6 @@ class SearchViewController: UIViewController {
         self.title = "Movie Search"
         tableView.delegate = self
         tableView.dataSource = self
-        
-//        var dateString = "2018-05-15"
-//        let dateObject = dateString.stringToDate(format: .yearMonthDay)
-//        print("The date:\(dateObject)")
-//        print("Formatted to string:\(dateObject?.dateToString(format: .monthDayYear))")
-
     }
     
     @IBAction func searchButtonAction(_ sender: UIButton) {
@@ -70,12 +64,14 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
         return arrayOfMovies?.count ?? 0
     }
     
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = arrayOfMovies![indexPath.row].original_title
+        cell.textLabel?.text = arrayOfMovies![indexPath.row].title
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     

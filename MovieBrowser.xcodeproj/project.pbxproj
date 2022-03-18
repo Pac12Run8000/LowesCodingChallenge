@@ -14,6 +14,7 @@
 		0910FD8827E40DC400585DCC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910FD8727E40DC400585DCC /* Movie.swift */; };
 		0910FD8A27E4A68800585DCC /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910FD8927E4A68800585DCC /* DateUtility.swift */; };
 		0910FD8C27E4B9F300585DCC /* AlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910FD8B27E4B9F300585DCC /* AlertUtility.swift */; };
+		0910FD8F27E4C35700585DCC /* CustomSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910FD8E27E4C35700585DCC /* CustomSearchCell.swift */; };
 		93305A732513D043004E869A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93305A722513D043004E869A /* AppDelegate.swift */; };
 		93305A752513D043004E869A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93305A742513D043004E869A /* SceneDelegate.swift */; };
 		93305A7A2513D043004E869A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93305A782513D043004E869A /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		0910FD8727E40DC400585DCC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		0910FD8927E4A68800585DCC /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 		0910FD8B27E4B9F300585DCC /* AlertUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtility.swift; sourceTree = "<group>"; };
+		0910FD8E27E4C35700585DCC /* CustomSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchCell.swift; sourceTree = "<group>"; };
 		93305A6F2513D043004E869A /* MovieBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93305A722513D043004E869A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93305A742513D043004E869A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 				0910FD8127E3E01A00585DCC /* Security.swift */,
 			);
 			path = SecureConstants;
+			sourceTree = "<group>";
+		};
+		0910FD8D27E4C31700585DCC /* CustomObjects */ = {
+			isa = PBXGroup;
+			children = (
+				0910FD8E27E4C35700585DCC /* CustomSearchCell.swift */,
+			);
+			path = CustomObjects;
 			sourceTree = "<group>";
 		};
 		93305A662513D043004E869A = {
@@ -168,6 +178,7 @@
 		93FE106D25E0557B00F805CE /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0910FD8D27E4C31700585DCC /* CustomObjects */,
 				0910FD8027E3DFA200585DCC /* SecureConstants */,
 				0910FD7D27E3DB3200585DCC /* Utilities */,
 				93FE106C25E0556500F805CE /* App */,
@@ -302,6 +313,7 @@
 				0910FD8427E3E15500585DCC /* NetworkConstants.swift in Sources */,
 				0910FD8C27E4B9F300585DCC /* AlertUtility.swift in Sources */,
 				93FE107325E056D100F805CE /* SearchViewController.swift in Sources */,
+				0910FD8F27E4C35700585DCC /* CustomSearchCell.swift in Sources */,
 				0910FD8A27E4A68800585DCC /* DateUtility.swift in Sources */,
 				0910FD7F27E3DB6A00585DCC /* CustomErrors.swift in Sources */,
 				93305A732513D043004E869A /* AppDelegate.swift in Sources */,

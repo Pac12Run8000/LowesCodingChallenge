@@ -13,7 +13,7 @@ struct Movies:Codable {
 }
 
 struct Movie:Codable {
-    var original_title:String
+    var title:String
     var release_date:String
     var vote_average:Double
 }

@@ -29,6 +29,8 @@ class SearchViewController: UIViewController {
         }
     }
     
+    var movie:Movie?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemBlue
@@ -53,11 +55,14 @@ class SearchViewController: UIViewController {
         }
     }
     
-    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "detailSegue") {
-            
+            let destViewController = segue.destination as! MovieDetailViewController
+            destViewController.movie = self.movie
         }
     }
+    
+    
     
 }
 
@@ -68,10 +73,11 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let movie = arrayOfMovies![indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomSearchCell
-        cell?.titleLabel.text = arrayOfMovies![indexPath.row].title
-        cell?.dateLabel.text = arrayOfMovies![indexPath.row].release_date.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear)
-        cell?.voteAverageLabel.text = "\(arrayOfMovies![indexPath.row].vote_average)"
+        cell?.titleLabel.text = movie.title
+        cell?.dateLabel.text = movie.release_date.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear)
+        cell?.voteAverageLabel.text = "\(movie.vote_average)"
         return cell!
     }
     
@@ -81,6 +87,8 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let movie = arrayOfMovies![indexPath.row] as? Movie else {return}
+        self.movie = movie
         performSegue(withIdentifier: "detailSegue", sender: self)
     }
     

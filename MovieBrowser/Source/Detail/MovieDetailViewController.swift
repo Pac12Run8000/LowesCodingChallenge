@@ -10,9 +10,16 @@ import UIKit
 
 class MovieDetailViewController: UIViewController {
     
+    var movie:Movie? {
+        didSet {
+            print("Movie details: \(movie)")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemBlue
     }
+    
+    
 }

@@ -9,10 +9,14 @@
 import UIKit
 
 class CustomSearchCell: UITableViewCell {
-
+    
+    @IBOutlet weak var titleLabel:UILabel!
+    @IBOutlet weak var dateLabel:UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

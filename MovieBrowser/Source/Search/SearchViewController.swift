@@ -65,9 +65,10 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = arrayOfMovies![indexPath.row].title
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomSearchCell
+        cell?.titleLabel.text = arrayOfMovies![indexPath.row].title
+        cell?.dateLabel.text = arrayOfMovies![indexPath.row].release_date.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear)
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -17,10 +17,13 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemBlue
         self.title = "Movie Search"
+        
+        
     }
     
     @IBAction func searchButtonAction(_ sender: UIButton) {
-        print("Test Blah")
+        guard let text = searchBar.text as? String else {return}
+        CustomURL.fetchURL(searchText: text)
     }
     
 }

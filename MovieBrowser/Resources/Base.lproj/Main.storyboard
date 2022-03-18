@@ -155,11 +155,24 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPZ-D3-b6k">
+                                        <rect key="frame" x="10" y="95" width="394" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Wzp-c7-0X9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="TPZ-D3-b6k" firstAttribute="top" secondItem="MZZ-iR-oFJ" secondAttribute="bottom" constant="5" id="4hm-dP-Chm"/>
+                                    <constraint firstAttribute="trailing" secondItem="TPZ-D3-b6k" secondAttribute="trailing" constant="10" id="69s-SK-XQB"/>
+                                    <constraint firstItem="TPZ-D3-b6k" firstAttribute="centerX" secondItem="joI-2n-Zfv" secondAttribute="centerX" id="Lts-tu-hkS"/>
                                     <constraint firstItem="MZZ-iR-oFJ" firstAttribute="centerX" secondItem="joI-2n-Zfv" secondAttribute="centerX" id="QSr-LH-HWn"/>
                                     <constraint firstItem="MZZ-iR-oFJ" firstAttribute="top" secondItem="joI-2n-Zfv" secondAttribute="top" constant="20" id="gg2-Ei-CBa"/>
+                                    <constraint firstItem="TPZ-D3-b6k" firstAttribute="leading" secondItem="joI-2n-Zfv" secondAttribute="leading" constant="10" id="iwp-bt-ZHg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -174,6 +187,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="f4O-3b-m31"/>
                     <connections>
+                        <outlet property="releaseDateOutlet" destination="TPZ-D3-b6k" id="H65-J4-w9Q"/>
                         <outlet property="titleLabel" destination="MZZ-iR-oFJ" id="bBR-Tz-JPT"/>
                     </connections>
                 </viewController>

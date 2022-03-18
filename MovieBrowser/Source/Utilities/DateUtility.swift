@@ -40,4 +40,5 @@ extension Date {
 enum DateFormat:String {
     case yearMonthDay = "yyyy-MM-dd"
     case monthDayYear = "MMMM d, yyyy"
+    case monthDayYear2 = "MM/dd/yy"
 }

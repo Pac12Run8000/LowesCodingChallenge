@@ -8,8 +8,7 @@
 
 import Foundation
 
-
-struct Results:Codable {
+struct Movies:Codable {
     var results:[Movie]
 }
 

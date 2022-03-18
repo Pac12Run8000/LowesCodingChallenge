@@ -10,9 +10,32 @@ import UIKit
 
 class Network {
     
-   
-    
-
+    public static func NetworkManager(search:String, completion:@escaping(Result<Movies, APIErrors>) -> ()) {
+        guard let url = CustomURL.fetchURL(searchText: search) else {
+            print("There is no URL.")
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard error == nil else {
+                completion(.failure(.datataskError(err: error!)))
+                return
+            }
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+                completion(.failure(.httpResponseStatusCodeError(statusCode: (response as? HTTPURLResponse)?.statusCode ?? 0)))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            guard let jsonResponse = try? JSONDecoder().decode(Movies.self, from: data) else {
+                completion(.failure(.jsonError(err: "JSon error when decoding")))
+                return
+            }
+            completion(.success(jsonResponse))
+        }
+        task.resume()
+    }
     
 
     

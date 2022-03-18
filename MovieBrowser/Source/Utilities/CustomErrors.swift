@@ -16,3 +16,22 @@ enum APIErrors:Error {
     case malformedURL
     case jsonError(err:String)
 }
+
+extension APIErrors:CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .datataskError(err: let err):
+            return "The app could not complete the request: \(err.localizedDescription)"
+        case .httpResponseStatusCodeError(statusCode: let num):
+            return "The app sent a request, but it didn't work. Try again later: \(num)"
+        case .noData:
+            return "There is no data return base on your search criteria."
+        case .malformedURL:
+            return "Invalid request"
+        case .jsonError(err: let err):
+            return "Couldn't use the data: \(err.description)"
+        }
+    }
+    
+    
+}

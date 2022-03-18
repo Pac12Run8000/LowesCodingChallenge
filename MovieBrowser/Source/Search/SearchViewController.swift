@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class SearchViewController: UIViewController {
     
@@ -14,20 +15,17 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    
     var results:Movies? {
         didSet {
             self.arrayOfMovies = results?.results
         }
     }
+    
     var arrayOfMovies:[Movie]? {
         didSet {
-            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
-            
         }
     }
     
@@ -55,10 +53,15 @@ class SearchViewController: UIViewController {
         }
     }
     
+    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "detailSegue") {
+            
+        }
+    }
+    
 }
 
 extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayOfMovies?.count ?? 0
@@ -68,6 +71,7 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomSearchCell
         cell?.titleLabel.text = arrayOfMovies![indexPath.row].title
         cell?.dateLabel.text = arrayOfMovies![indexPath.row].release_date.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear)
+        cell?.voteAverageLabel.text = "\(arrayOfMovies![indexPath.row].vote_average)"
         return cell!
     }
     
@@ -75,7 +79,9 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
         return 150
     }
     
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "detailSegue", sender: self)
+    }
     
 }

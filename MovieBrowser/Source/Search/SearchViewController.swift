@@ -62,7 +62,10 @@ class SearchViewController: UIViewController {
         Network.NetworkManager(search: text) { [weak self] result in
             switch result {
             case .failure(let err):
-                print(err)
+                guard let strongself = self else {return}
+                DispatchQueue.main.async {
+                    Alert.presentAlertError(text: err.description, control: strongself)
+                }
             case .success(let results):
                 guard let strongself = self else {return}
                 strongself.results = results

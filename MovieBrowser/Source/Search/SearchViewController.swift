@@ -33,16 +33,23 @@ class SearchViewController: UIViewController {
         self.title = "Movie Search"
         
         
-//        var dateString = "2018-05-15"
+        
+        
+        var dateString = "2018-05-15"
+        let dateObject = dateString.stringToDate(format: .yearMonthDay)
+        print("The date:\(dateObject)")
+        print("Formatted to string:\(dateObject?.dateToString(format: .monthDayYear))")
+        
 //        dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        let dateString = "2018-05-15"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        dateFormatter.locale = Locale.init(identifier: "chr_US")
-
-        let dateObj = dateFormatter.date(from: dateString)
-        print("actual date object:\(dateObj)")
+//        let dateString = "2018-05-15"
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        dateFormatter.locale = Locale.init(identifier: "chr_US")
+//
+//        let dateObj = dateFormatter.date(from: dateString)
+//        print("actual date object:\(dateObj)")
+        
 //        dateFormatter.dateFormat = "MM-dd-yyyy"
 //        print("Dateobj: \(dateFormatter.string(from: dateObj!))")
        

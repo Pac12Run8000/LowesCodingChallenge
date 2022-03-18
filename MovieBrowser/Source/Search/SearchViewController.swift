@@ -12,17 +12,21 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     var results:Movies? {
         didSet {
-           
             self.arrayOfMovies = results?.results
         }
     }
     var arrayOfMovies:[Movie]? {
         didSet {
             
-            print("arrayOfMovies:\(arrayOfMovies)")
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
             
         }
     }
@@ -31,29 +35,13 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemBlue
         self.title = "Movie Search"
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        
-        
-        
-        var dateString = "2018-05-15"
-        let dateObject = dateString.stringToDate(format: .yearMonthDay)
-        print("The date:\(dateObject)")
-        print("Formatted to string:\(dateObject?.dateToString(format: .monthDayYear))")
-        
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-//        let dateString = "2018-05-15"
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//        dateFormatter.locale = Locale.init(identifier: "chr_US")
-//
-//        let dateObj = dateFormatter.date(from: dateString)
-//        print("actual date object:\(dateObj)")
-        
-//        dateFormatter.dateFormat = "MM-dd-yyyy"
-//        print("Dateobj: \(dateFormatter.string(from: dateObj!))")
-       
-        
+//        var dateString = "2018-05-15"
+//        let dateObject = dateString.stringToDate(format: .yearMonthDay)
+//        print("The date:\(dateObject)")
+//        print("Formatted to string:\(dateObject?.dateToString(format: .monthDayYear))")
 
     }
     
@@ -72,5 +60,25 @@ class SearchViewController: UIViewController {
             }
         }
     }
+    
+}
+
+extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayOfMovies?.count ?? 0
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = arrayOfMovies![indexPath.row].original_title
+        return cell
+    }
+    
+    
+    
     
 }

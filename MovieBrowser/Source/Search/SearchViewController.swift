@@ -13,9 +13,17 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchButton: UIButton!
     
-    var movies:Movies? {
+    var results:Movies? {
         didSet {
-            print("computed property:\(movies)")
+           
+            self.arrayOfMovies = results?.results
+        }
+    }
+    var arrayOfMovies:[Movie]? {
+        didSet {
+            
+            print("arrayOfMovies:\(arrayOfMovies)")
+            
         }
     }
     
@@ -23,6 +31,23 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemBlue
         self.title = "Movie Search"
+        
+        
+//        var dateString = "2018-05-15"
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let dateString = "2018-05-15"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale.init(identifier: "chr_US")
+
+        let dateObj = dateFormatter.date(from: dateString)
+        print("actual date object:\(dateObj)")
+//        dateFormatter.dateFormat = "MM-dd-yyyy"
+//        print("Dateobj: \(dateFormatter.string(from: dateObj!))")
+       
+        
+
     }
     
     @IBAction func searchButtonAction(_ sender: UIButton) {
@@ -33,7 +58,7 @@ class SearchViewController: UIViewController {
                 print(err)
             case .success(let results):
                 guard let strongself = self else {return}
-                strongself.movies = results
+                strongself.results = results
             }
         }
     }

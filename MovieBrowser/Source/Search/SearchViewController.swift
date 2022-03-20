@@ -41,7 +41,7 @@ class SearchViewController: UIViewController {
     
     @IBAction func searchButtonAction(_ sender: UIButton) {
         guard let text = searchBar.text, !text.isEmpty else {return}
-        Network.NetworkManager(search: text) { [weak self] result in
+        Network<Movies>.NetworkManager(search: text) { [weak self] result in
             switch result {
             case .failure(let err):
                 guard let strongself = self else {return}

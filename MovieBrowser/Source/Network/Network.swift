@@ -10,7 +10,7 @@ import UIKit
 
 class Network<T:Codable> {
     
-    public static func NetworkManager(search:String, completion:@escaping(Result<T, APIErrors>) -> ()) {
+    public static func NetworkManager(search:String, completion:@escaping(Result<FailableDecodeable<T>, APIErrors>) -> ()) {
         guard let url = CustomURL.fetchURL(searchText: search) else {
             print("There is no URL.")
             return
@@ -28,7 +28,7 @@ class Network<T:Codable> {
                 completion(.failure(.noData))
                 return
             }
-            guard let jsonResponse = try? JSONDecoder().decode(T.self, from: data) else {
+            guard let jsonResponse = try? JSONDecoder().decode(FailableDecodeable<T>.self, from: data) else {
                 completion(.failure(.jsonError(err: "JSon error when decoding")))
                 return
             }

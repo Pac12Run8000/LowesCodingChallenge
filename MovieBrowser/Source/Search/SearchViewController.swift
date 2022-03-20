@@ -50,7 +50,7 @@ class SearchViewController: UIViewController {
                 }
             case .success(let results):
                 guard let strongself = self else {return}
-                strongself.results = results
+                strongself.results = results.element
             }
         }
     }

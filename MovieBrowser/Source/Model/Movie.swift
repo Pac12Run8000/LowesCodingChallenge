@@ -14,8 +14,16 @@ struct Movies:Codable {
 
 struct Movie:Codable {
     var title:String
-    var release_date:String
-    var vote_average:Double
+    var releaseDate:String
+    var voteAverage:Double
     var overview:String
-    var poster_path:String
+    var posterPath:String
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case releaseDate = "release_date"
+        case voteAverage = "vote_average"
+        case overview
+        case posterPath = "poster_path"
+    }
 }

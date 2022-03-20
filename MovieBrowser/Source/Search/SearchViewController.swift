@@ -76,8 +76,8 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
         let movie = arrayOfMovies![indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomSearchCell
         cell?.titleLabel.text = movie.title
-        cell?.dateLabel.text = movie.release_date.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear)
-        cell?.voteAverageLabel.text = "\(movie.vote_average)"
+        cell?.dateLabel.text = movie.releaseDate.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear)
+        cell?.voteAverageLabel.text = "\(movie.voteAverage)"
         return cell!
     }
     
@@ -87,7 +87,7 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let movie = arrayOfMovies![indexPath.row] as? Movie else {return}
+        guard let arrayOfMovies = arrayOfMovies, let movie = arrayOfMovies[indexPath.row] as? Movie else {return}
         self.movie = movie
         performSegue(withIdentifier: "detailSegue", sender: self)
     }

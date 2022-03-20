@@ -20,7 +20,7 @@ class MovieDetailViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 guard let strongself = self else {return}
                 strongself.titleLabel.text = strongself.movie?.title
-                guard let date = strongself.movie?.release_date, let formattedDate = date.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear2) else {return}
+                guard let date = strongself.movie?.releaseDate, let formattedDate = date.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear2) else {return}
                 strongself.releaseDateOutlet.text = "Release Date: \(formattedDate)"
                 strongself.overviewLabel.text = strongself.movie?.overview
             }

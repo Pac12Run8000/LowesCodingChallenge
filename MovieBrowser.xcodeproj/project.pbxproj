@@ -17,6 +17,8 @@
 		0910FD8F27E4C35700585DCC /* CustomSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910FD8E27E4C35700585DCC /* CustomSearchCell.swift */; };
 		0910FDC427E7BA6F00585DCC /* FailableDecodeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910FDC327E7BA6F00585DCC /* FailableDecodeable.swift */; };
 		0910FDC827E820B300585DCC /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910FDC727E820B300585DCC /* CustomImageView.swift */; };
+		0910FDCA27E8250A00585DCC /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910FDC927E8250A00585DCC /* MovieDetailViewModel.swift */; };
+		0910FDCC27E825DE00585DCC /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910FDCB27E825DE00585DCC /* SearchViewModel.swift */; };
 		93305A732513D043004E869A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93305A722513D043004E869A /* AppDelegate.swift */; };
 		93305A752513D043004E869A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93305A742513D043004E869A /* SceneDelegate.swift */; };
 		93305A7A2513D043004E869A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93305A782513D043004E869A /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		0910FD8E27E4C35700585DCC /* CustomSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchCell.swift; sourceTree = "<group>"; };
 		0910FDC327E7BA6F00585DCC /* FailableDecodeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableDecodeable.swift; sourceTree = "<group>"; };
 		0910FDC727E820B300585DCC /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		0910FDC927E8250A00585DCC /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		0910FDCB27E825DE00585DCC /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		93305A6F2513D043004E869A /* MovieBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93305A722513D043004E869A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93305A742513D043004E869A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				93C5866225E9F01B00DBCE60 /* MovieDetailViewController.swift */,
+				0910FDC927E8250A00585DCC /* MovieDetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				93FE107225E056D100F805CE /* SearchViewController.swift */,
+				0910FDCB27E825DE00585DCC /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 				0910FD8C27E4B9F300585DCC /* AlertUtility.swift in Sources */,
 				93FE107325E056D100F805CE /* SearchViewController.swift in Sources */,
 				0910FD8F27E4C35700585DCC /* CustomSearchCell.swift in Sources */,
+				0910FDCA27E8250A00585DCC /* MovieDetailViewModel.swift in Sources */,
 				0910FDC827E820B300585DCC /* CustomImageView.swift in Sources */,
 				0910FD8A27E4A68800585DCC /* DateUtility.swift in Sources */,
 				0910FD7F27E3DB6A00585DCC /* CustomErrors.swift in Sources */,
@@ -329,6 +336,7 @@
 				0910FDC427E7BA6F00585DCC /* FailableDecodeable.swift in Sources */,
 				93305A752513D043004E869A /* SceneDelegate.swift in Sources */,
 				93C5866325E9F01B00DBCE60 /* MovieDetailViewController.swift in Sources */,
+				0910FDCC27E825DE00585DCC /* SearchViewModel.swift in Sources */,
 				0910FD8627E3F41F00585DCC /* CustomUrl.swift in Sources */,
 				0910FD8227E3E01A00585DCC /* Security.swift in Sources */,
 			);

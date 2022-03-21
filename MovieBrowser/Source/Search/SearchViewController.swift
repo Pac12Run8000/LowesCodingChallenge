@@ -11,6 +11,8 @@ import Foundation
 
 class SearchViewController: UIViewController {
     
+    var viewModel:SearchViewModel?
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -23,6 +25,8 @@ class SearchViewController: UIViewController {
     
     var arrayOfMovies:[Movie]? {
         didSet {
+            guard let arrayOfMovies = arrayOfMovies else {return}
+            viewModel = SearchViewModel(array: arrayOfMovies)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -73,12 +77,10 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let movie = arrayOfMovies![indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomSearchCell
-        cell?.titleLabel.text = movie.title
-        cell?.dateLabel.text = movie.releaseDate.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear)
-        cell?.voteAverageLabel.text = "\(movie.voteAverage)"
-        return cell!
+        guard let cell = viewModel?.fetchTableViewCell(tableView: tableView, indexPath: indexPath, controller: self) else {
+            return UITableViewCell(style: .default, reuseIdentifier: "cell")
+        }
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

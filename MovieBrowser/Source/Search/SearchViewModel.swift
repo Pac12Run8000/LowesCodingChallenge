@@ -18,20 +18,12 @@ class SearchViewModel {
     }
     
     public func fetchTableViewCell(tableView:UITableView, indexPath:IndexPath, controller:UIViewController) -> UITableViewCell {
-        
-        var movie = self.arrayOfMovie[indexPath.row]
+        let movie = self.arrayOfMovie[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomSearchCell
         cell?.titleLabel.text = movie.title
         cell?.dateLabel.text = movie.releaseDate.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear)
         cell?.voteAverageLabel.text = "\(movie.voteAverage)"
-        return cell!
-//        let movie = arrayOfMovies![indexPath.row]
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomSearchCell
-//        cell?.titleLabel.text = movie.title
-//        cell?.dateLabel.text = movie.releaseDate.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear)
-//        cell?.voteAverageLabel.text = "\(movie.voteAverage)"
-//        return cell!
-        
+        return cell ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
     }
     
 }

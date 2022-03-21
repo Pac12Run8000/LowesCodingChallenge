@@ -15,15 +15,13 @@ class CustomImageView: UIImageView {
     var task:URLSessionDataTask?
 
     public func loadImage(from url:URL, handler:@escaping(_ image:UIImage?) -> ()) {
-//        let mainQueue = DispatchQueue.main
-//        self.image = nil
+
         handler(nil)
         if let task = task {
             task.cancel()
         }
 
         if let imageFromCache = imageCache.object(forKey: url.absoluteString as AnyObject) as? UIImage {
-//            self.image = imageFromCache
             handler(imageFromCache)
             return
         }
@@ -36,7 +34,6 @@ class CustomImageView: UIImageView {
             imageCache.setObject(newImage, forKey: url.absoluteString as AnyObject)
 
             DispatchQueue.main.async {
-//                self.image = newImage
                 handler(newImage)
             }
         }

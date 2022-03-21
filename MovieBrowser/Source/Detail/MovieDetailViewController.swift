@@ -23,6 +23,14 @@ class MovieDetailViewController: UIViewController {
                 guard let date = strongself.movie?.releaseDate, let formattedDate = date.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear2) else {return}
                 strongself.releaseDateOutlet.text = "Release Date: \(formattedDate)"
                 strongself.overviewLabel.text = strongself.movie?.overview
+                guard let posterPath = strongself.movie?.posterPath, let urlString = CustomURL.posterPath + "\(posterPath)" as? String, let url = URL(string: urlString) else {return}
+                
+                if let myView = strongself.moviePosterImage as? CustomImageView {
+                    myView.loadImage(from: url) { image in
+                        strongself.moviePosterImage.image = image
+                    }
+                }
+               
             }
         }
     }

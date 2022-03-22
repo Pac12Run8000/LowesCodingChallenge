@@ -15,9 +15,9 @@ struct Movies:Codable {
 struct Movie:Codable {
     var title:String
     var releaseDate:String
-    var voteAverage:Double
-    var overview:String
-    var posterPath:String
+    var voteAverage:Double?
+    var overview:String?
+    var posterPath:String?
     
     enum CodingKeys: String, CodingKey {
         case title

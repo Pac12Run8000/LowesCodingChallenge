@@ -22,7 +22,9 @@ class SearchViewModel {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomSearchCell
         cell?.titleLabel.text = movie.title
         cell?.dateLabel.text = movie.releaseDate.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear)
-        cell?.voteAverageLabel.text = "\(movie.voteAverage)"
+        if let voteAverage = movie.voteAverage {
+            cell?.voteAverageLabel.text = "\(voteAverage)"
+        }
         return cell ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
     }
     

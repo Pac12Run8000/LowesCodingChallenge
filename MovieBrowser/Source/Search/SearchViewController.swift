@@ -77,10 +77,12 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = viewModel?.fetchTableViewCell(tableView: tableView, indexPath: indexPath, controller: self) else {
-            return UITableViewCell(style: .default, reuseIdentifier: "cell")
-        }
-        return cell
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CustomSearchCell
+        cell?.titleLabel.text = viewModel?.fetchTitleLabel(indexPath: indexPath)
+        cell?.dateLabel.text = viewModel?.fetchDateLabel(indexPath: indexPath)
+        cell?.voteAverageLabel.text = viewModel?.fetchVoteAverage(indexPath: indexPath)
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -95,3 +97,6 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+
+

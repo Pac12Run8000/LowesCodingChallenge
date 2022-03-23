@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 class SearchViewModel {
     
@@ -17,15 +16,14 @@ class SearchViewModel {
         self.arrayOfMovie = array
     }
     
-    public func fetchTableViewCell(tableView:UITableView, indexPath:IndexPath, controller:UIViewController) -> UITableViewCell {
-        let movie = self.arrayOfMovie[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomSearchCell
-        cell?.titleLabel.text = movie.title
-        cell?.dateLabel.text = movie.releaseDate.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear)
-        if let voteAverage = movie.voteAverage {
-            cell?.voteAverageLabel.text = "\(voteAverage)"
-        }
-        return cell ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
+    func fetchTitleLabel(indexPath:IndexPath) -> String {
+        return arrayOfMovie[indexPath.row].title ?? "no title"
+    }
+    func fetchDateLabel(indexPath:IndexPath) -> String {
+        return arrayOfMovie[indexPath.row].releaseDate.stringToDate(format: .yearMonthDay)?.dateToString(format: .monthDayYear) ?? "no date"
+    }
+    func fetchVoteAverage(indexPath:IndexPath) -> String {
+        return "\(arrayOfMovie[indexPath.row].voteAverage ?? 0.0)"
     }
     
 }

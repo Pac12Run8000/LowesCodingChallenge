@@ -82,7 +82,7 @@ extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
         cell?.titleLabel.text = viewModel?.fetchTitleLabel(indexPath: indexPath)
         cell?.dateLabel.text = viewModel?.fetchDateLabel(indexPath: indexPath)
         cell?.voteAverageLabel.text = viewModel?.fetchVoteAverage(indexPath: indexPath)
-        return cell!
+        return cell ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
